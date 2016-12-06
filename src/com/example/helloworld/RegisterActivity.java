@@ -8,6 +8,7 @@ import android.os.Bundle;
 public class RegisterActivity extends Activity {
 	
 	SimpleTextInputCellFragment fragInputCellAccount;
+	SimpleTextInputCellFragment fragInputCellEmailAddress;
 	SimpleTextInputCellFragment fragInputCellPassword;
 	SimpleTextInputCellFragment fragInputCellPasswordRepeat;
 	
@@ -18,6 +19,7 @@ public class RegisterActivity extends Activity {
 		setContentView(R.layout.activity_register);
 	
 	    fragInputCellAccount = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_account);
+	    fragInputCellEmailAddress = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_email);
 	    fragInputCellPassword = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_password);
 	    fragInputCellPasswordRepeat = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_password_repeat);
 	    
@@ -30,13 +32,19 @@ public class RegisterActivity extends Activity {
 	    
 		fragInputCellAccount.setLabelText("账户名");
 		fragInputCellAccount.setHintText("请输入账户名");
+		
+		fragInputCellEmailAddress.setLabelText("电子邮箱");
+		fragInputCellEmailAddress.setHintText("请输入电子邮箱");
+		
 		fragInputCellPassword.setLabelText("密码");
-		fragInputCellPassword.setHintText("请输入密码");
+		fragInputCellPassword.setHintText("请输入密码");		
 		fragInputCellPassword.setIsPassword(true);
-		fragInputCellPasswordRepeat.setLabelText("重复密码");
+		
+		fragInputCellPasswordRepeat.setLabelText("重复密码");		
 		fragInputCellPasswordRepeat.setHintText("请重复输入密码");
 		fragInputCellPassword.setIsPassword(true);
 		
 	}
 	
 }
+
