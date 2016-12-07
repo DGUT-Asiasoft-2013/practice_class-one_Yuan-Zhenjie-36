@@ -29,6 +29,14 @@ public class LoginActivity extends Activity {
 			}
 		});
 		
+		findViewById(R.id.btn_forgot_password).setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				goRecoverPassword();
+			}
+		});
+		
 		fragAccount = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_account);
 		fragPassword = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_account);
 	}
@@ -44,14 +52,18 @@ public class LoginActivity extends Activity {
 		fragPassword.setIsPassword(true);
 	}
 	
-	void goLogin(){
-		Intent itnt = new Intent(this, HelloWorldActivity.class);
-		startActivity(itnt);
-	}
-	
 	void goRegister(){
 		Intent itnt = new Intent(this, RegisterActivity.class);
 		startActivity(itnt);
 	}
 	
+	void goLogin(){
+		Intent itnt = new Intent(this, HelloWorldActivity.class);
+		startActivity(itnt);
+	}
+
+	void goRecoverPassword(){
+		Intent itnt = new Intent(this, PasswordRecoverActivity.class);
+		startActivity(itnt);
+	}
 }
