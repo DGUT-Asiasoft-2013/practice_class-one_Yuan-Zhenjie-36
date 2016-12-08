@@ -5,10 +5,12 @@ import com.example.helloworld.fragments.pages.MyProfileFragment;
 import com.example.helloworld.fragments.pages.NoteListFragment;
 import com.example.helloworld.fragments.pages.SearchPageFragment;
 import com.example.helloworld.fragments.widgets.MainTabbarFragment;
+import com.example.helloworld.fragments.widgets.MainTabbarFragment.OnNewClickedListener;
 import com.example.helloworld.fragments.widgets.MainTabbarFragment.OnTabSelectedListener;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class HelloWorldActivity extends Activity {
@@ -24,13 +26,21 @@ public class HelloWorldActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_helloworld);
-		
+
 		tabbar = (MainTabbarFragment) getFragmentManager().findFragmentById(R.id.frag_tabbar);
 		tabbar.setOnTabSelectedListener(new OnTabSelectedListener() {
 
 			@Override
 			public void onTabSelected(int index) {
 				changeContentFragment(index);
+			}
+		});
+
+		tabbar.setOnNewClickedListener(new OnNewClickedListener() {
+
+			@Override
+			public void onNewClicked() {
+				bringUpEditor();
 			}
 		});
 	}
@@ -60,5 +70,11 @@ public class HelloWorldActivity extends Activity {
 		.beginTransaction()
 		.replace(R.id.content, newFrag)
 		.commit();
+	}
+
+	void bringUpEditor(){
+		Intent itnt = new Intent(this, NewContentActivity.class);
+		startActivity(itnt);
+		overridePendingTransition(R.anim.slide_in_bottom, R.anim.none);
 	}
 }

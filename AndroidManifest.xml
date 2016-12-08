@@ -24,18 +24,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.helloworld.LoginActivity" 
+            android:name="com.example.helloworld.LoginActivity"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name="com.example.helloworld.RegisterActivity"
-            android:theme="@style/AppTheme" > 
+            android:theme="@style/AppTheme" >
         </activity>
-        <activity
-            android:name="com.example.helloworld.HelloWorldActivity" >
+        <activity android:name="com.example.helloworld.HelloWorldActivity" >
         </activity>
-        <activity
-            android:name="com.example.helloworld.PasswordRecoverActivity" >
+        <activity android:name="com.example.helloworld.PasswordRecoverActivity" >
+        </activity>
+        <activity android:name="com.example.helloworld.FeedContentActivity" >
+        </activity>
+        <activity android:name="com.example.helloworld.NewContentActivity" >
         </activity>
     </application>
 
