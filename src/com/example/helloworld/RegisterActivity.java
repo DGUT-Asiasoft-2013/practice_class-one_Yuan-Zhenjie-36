@@ -116,11 +116,7 @@ public class RegisterActivity extends Activity {
 							fragInputAvatar.getPngData()));
 		}
 
-		Request request = new Request.Builder()
-				.url("http://172.27.0.56:8080/membercenter/api/register")
-				.method("post", null)
-				.post(requestBodyBuilder.build())
-				.build();
+		Request request = new Request.Builder().url("http://172.27.0.56:8080/membercenter/api/register").method("post", null).post(requestBodyBuilder.build()).build();
 
 		final ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this);
 		progressDialog.setMessage("«Î…‘∫Ú");
