@@ -49,20 +49,20 @@ public class BootActivity extends Activity {
 			@Override
 			public void onResponse(Call arg0, final Response arg1) throws IOException {
 				Log.d("response", arg1.toString());
+				startLoginActivity();
 
-				//				BootActivity.this.runOnUiThread(new Runnable() {
-				//					
-				//					@Override
-				//					public void run() {
-				//						try {
-				//							Toast.makeText(BootActivity.this, arg1.body().string(), Toast.LENGTH_SHORT).show();
-				//						} catch (IOException e) {
-				//							e.printStackTrace();
-				//						}
-				//						startLoginActivity();
-				//					}
-				//				});
+				BootActivity.this.runOnUiThread(new Runnable() {
 
+					@Override
+					public void run() {
+						try {
+							Toast.makeText(BootActivity.this, arg1.body().string(), Toast.LENGTH_SHORT).show();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						startLoginActivity();
+					}
+				});
 			}
 
 			@Override

@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
 		});
 		
 		fragAccount = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_account);
-		fragPassword = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_account);
+		fragPassword = (SimpleTextInputCellFragment) getFragmentManager().findFragmentById(R.id.input_password);
 	}
 	
 	@Override

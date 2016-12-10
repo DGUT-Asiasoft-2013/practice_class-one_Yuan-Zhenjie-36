@@ -9,7 +9,7 @@
         android:layout_height="0dp"
         android:focusable="true"
         android:focusableInTouchMode="true" />
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -26,14 +26,21 @@
                 android:layout_height="wrap_content"
                 class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
                 tools:layout="@layout/fragment_inputcell_simpletext" />
-            
+
+            <fragment
+                android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+                tools:layout="@layout/fragment_inputcell_simpletext" />
+
             <fragment
                 android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
                 tools:layout="@layout/fragment_inputcell_simpletext" />
-            
+
             <fragment
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
@@ -46,20 +53,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
-                tools:layout="@layout/fragment_inputcell_simpletext" />       
-            
+                tools:layout="@layout/fragment_inputcell_simpletext" />
+
             <fragment
-                android:id="@+id/picture"
+                android:id="@+id/input_avatar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 class="com.example.helloworld.fragments.inputcells.PictureInputCellFragment"
                 tools:layout="@layout/fragment_inputcell_picture" />
-            
+
             <Button
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="SUBMIT" />
+                android:text="提交" />
         </LinearLayout>
     </ScrollView>
 
