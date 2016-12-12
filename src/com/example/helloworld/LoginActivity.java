@@ -36,7 +36,6 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 
 		findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				goRegister();
@@ -44,7 +43,6 @@ public class LoginActivity extends Activity {
 		});
 
 		findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				goLogin();
@@ -52,7 +50,6 @@ public class LoginActivity extends Activity {
 		});
 
 		findViewById(R.id.btn_forgot_password).setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				goRecoverPassword();
@@ -89,11 +86,10 @@ public class LoginActivity extends Activity {
 		final ProgressDialog dlg = new ProgressDialog(this);
 		dlg.setCancelable(false);
 		dlg.setCanceledOnTouchOutside(false);
-		dlg.setMessage("正在登陆");
+		dlg.setMessage("正在登录");
 		dlg.show();
 
 		client.newCall(request).enqueue(new Callback() {
-
 			@Override
 			public void onResponse(Call arg0, Response arg1) throws IOException {
 				final String responseString = arg1.body().string();
@@ -103,17 +99,13 @@ public class LoginActivity extends Activity {
 				runOnUiThread(new Runnable() {
 					public void run() {
 						dlg.dismiss();
-						new AlertDialog.Builder(LoginActivity.this)
-						.setMessage("Hello,"+user.getName())
-//						.setMessage(responseString)
-						.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+						new AlertDialog.Builder(LoginActivity.this).setMessage("Hello!"+user.getName()).setPositiveButton("OK", new DialogInterface.OnClickListener(){
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 								Intent itnt = new Intent(LoginActivity.this, HelloWorldActivity.class);
 								startActivity(itnt);	
 							}	
-						})
-						.show();
+						}).show();
 					}
 				});
 			}
@@ -123,7 +115,6 @@ public class LoginActivity extends Activity {
 				runOnUiThread(new Runnable() {
 					public void run() {
 						dlg.dismiss();
-
 						Toast.makeText(LoginActivity.this, arg1.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 					}
 				});

@@ -22,16 +22,19 @@ public class Server {
 		CookieManager cookieManager = new CookieManager();
 		cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
 
-		client = new OkHttpClient.Builder().cookieJar(new JavaNetCookieJar(cookieManager)).build();
+		client = new OkHttpClient.Builder()
+				.cookieJar(new JavaNetCookieJar(cookieManager))
+				.build();
 	}
 
 	public static OkHttpClient getSharedClient(){
 		return client;
 	}
 	
-	public static String serverAddress = "http://172.27.0.56:8080/membercenter/";
+	public static String serverAddress = "http://172.27.0.26:8080/membercenter/";
 
 	public static Request.Builder requestBuilderWithApi(String api){
-		return new Request.Builder().url(serverAddress+"api/"+api);
+		return new Request.Builder()
+				.url(serverAddress+"api/"+api);
 	}
 }
