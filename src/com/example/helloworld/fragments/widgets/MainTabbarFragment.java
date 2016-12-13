@@ -36,7 +36,7 @@ public class MainTabbarFragment extends Fragment {
 				public void onClick(View v) {
 					onTabClicked(tab);
 				}
-			});			
+			});
 		}
 
 		btnNew.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +64,14 @@ public class MainTabbarFragment extends Fragment {
 		if(index>=0 && index<tabs.length){
 			onTabClicked(tabs[index]);
 		}
+	}
+
+	public int getSelectedIndex(){
+		for(int i=0; i<tabs.length; i++){
+			if(tabs[i].isSelected()) return i;
+		}
+
+		return -1;
 	}
 
 	void onTabClicked(View tab){
