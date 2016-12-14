@@ -3,6 +3,9 @@ package com.example.helloworld.api.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class Article implements Serializable{
 	Integer id;
 	Date createDate;
@@ -10,8 +13,8 @@ public class Article implements Serializable{
 
 	String title;
 	String text;
-	String authorName;
-	String authorAvatar;
+	
+	User author;
 	
 	public Integer getId() {
 		return id;
@@ -53,19 +56,11 @@ public class Article implements Serializable{
 		this.text = text;
 	}
 	
-	public String getAuthorName() {
-		return authorName;
+	public User getAuthor() {
+		return author;
 	}
 	
-	public void setAuthorName(String authorName) {
-		this.authorName = authorName;
-	}
-	
-	public String getAuthorAvatar() {
-		return authorAvatar;
-	}
-	
-	public void setAuthorAvatar(String authorAvatar) {
-		this.authorAvatar = authorAvatar;
+	public void setAuthor(User author) {
+		this.author = author;
 	}
 }
